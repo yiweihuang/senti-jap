@@ -1,0 +1,35 @@
+section
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.text-center
+        span.chevron
+        h2.section-heading 
+          == "#{@sentiment}"
+        -if @sentiment == 'Positive'
+          div
+            img src="/img/smile.png" /
+        -elsif @sentiment == 'Negative'
+          div
+            img src="/img/sad.png" /
+        -else
+          div
+            img src="/img/mid.png" /
+        hr.primary
+        p
+        .panel.panel-info
+          .panel-heading Score
+          .panel-body
+            table.table.table-striped.table-hover
+                thead
+                  tr
+                    th Positive
+                    th Negative
+                tbody align="left"
+                  tr
+                    td
+                      == "#{@pScore}"
+                    td 
+                      == "#{@nScore}"
+                    
+            
+                
